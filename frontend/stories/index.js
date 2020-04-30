@@ -6,12 +6,22 @@ import FilterControls from "../src/components/filterControls";
 import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
+import LoginForm from "../src/components/loginForm";
+import RegisterForm from "../src/components/registerForm";
 import MovieHeader from "../src/components/headerMovie";
-import ReviewButton from "../src/components/buttons/addReview";
+import ActorDetails from "../src/components/actorDetails";
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
+
+const sampleActor = {
+  id: 1,
+  birthday: "01/01/1990",
+  name: "Test Actor",
+  place_of_birth: "America",
+  biography: "Testing testing testing testing"
+}
 
 const sample = {
   adult: false,
@@ -138,7 +148,7 @@ storiesOf("Home Page/MovieList", module)
       <MovieList
         movies={movies}
         action={movie => (
-          <button className="btn w-100 btn-primary">Add to favroites</button>
+          <button className="btn w-100 btn-primary">Test</button>
         )}
       />
     );
@@ -154,14 +164,15 @@ storiesOf("Movie Details Page/MovieHeader", module)
   ))
   .add("default", () => <MovieHeader movie={sample} />);
 
-storiesOf("Buttons/AddReview", module)
-  .addDecorator(story => (
-    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
-  ))
-  .add("default", () => <ReviewButton movie={sample} />);
-  
-  storiesOf("Buttons/AddToFavorites", module)
-  .addDecorator(story => (
-    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
-  ))
-  .add("default", () => <AddFavoriteButton movie={sample} />);
+storiesOf("User/Login", module).add("default", () => (
+  <MemoryRouter>
+    <LoginForm/>
+  </MemoryRouter>
+));
+
+storiesOf("User/Register", module).add("default", () => (
+  <MemoryRouter>
+    <RegisterForm/>
+  </MemoryRouter>
+));
+

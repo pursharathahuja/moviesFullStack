@@ -16,5 +16,29 @@ p {
 }
 
 .card-title {
-  text-align: center
+  text-align: center;
+  height: 55px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.col-sm-3 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+}
+
+.flashtitle {
+  display: none;
+  top: 60%;
+  left: 67px;
+  padding: 5px;
+  position: absolute;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+}
+
+.titleDiv:hover .flashtitle {
+  display: block;
 }

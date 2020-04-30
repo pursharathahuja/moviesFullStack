@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./movieCard.css";
+import { Link } from "react-router-dom";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Movie = ({movie, action}) => {
+const MovieCard = ({movie, action}) => {
 
   return (
     <div className="col-sm-3">
@@ -16,12 +16,15 @@ const Movie = ({movie, action}) => {
           src={
             movie.poster_path
               ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-              : "./film-poster-placeholder.png"
+              : "./fallback.png"
           }
         />
         </Link>
         <div className="card-body">
-          <h4 className="card-title ">{movie.title}</h4>
+          <div className="titleDiv">
+            <h4 className="card-title">{movie.title}</h4>
+            <span className="flashtitle">{movie.title}</span>
+          </div>
           <p>
             <FontAwesomeIcon icon={["fas", "calendar"]} />
             <span> {movie.release_date}</span>
@@ -39,4 +42,4 @@ const Movie = ({movie, action}) => {
   );
 };
 
-export default (Movie);
+export default MovieCard ;

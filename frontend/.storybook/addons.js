@@ -1,3 +1,1 @@
-module.exports = {
-    addons: ['@storybook/addon-actions/register']
-  }
+export const addons = ['@storybook/addon-actions/register'];

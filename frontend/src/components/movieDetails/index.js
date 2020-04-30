@@ -1,7 +1,14 @@
 import React from "react";
+import useCredits from "../../hooks/useCredits";
+import useCrew from "../../hooks/useCrew";
+import AllCast from "../allCasts";
+import AllCrew from "../allCrew";
 import "./movieDetails.css";
 
+
 export default ({ movie }) => {
+  const [credits] = useCredits(movie.id);
+  const [crew]    = useCrew(movie.id);
   return (
     <>
       <h4>Overview</h4>
@@ -61,6 +68,18 @@ export default ({ movie }) => {
           </li>
         ))}
       </ul>
+      <h4 className="allCastHeader">All Cast</h4>
+      <div className="container">
+        <div className="row allCastRow">
+            {credits && credits.map(actor => (<AllCast actor={actor}/>))}
+        </div>
+      </div>
+      <h4 className="allCastHeader">All Crew</h4>
+      <div className="container">
+        <div className="row allCastRow">
+            {crew && crew.map(crew => (<AllCrew crew={crew}/>))}
+        </div>
+      </div>
     </>
   );
 };

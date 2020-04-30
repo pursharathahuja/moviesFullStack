@@ -2,3 +2,19 @@
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.headerlinks{
+    text-align: center;
+}
+
+.headerIcons{
+    width: 31px !important;
+    height: unset;
+    padding: unset;
+    margin-top: 4px;
+    margin-bottom: -2px;
+}

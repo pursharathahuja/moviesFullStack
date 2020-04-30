@@ -1,31 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
 import "./siteHeader.css";
+import {UserContext} from '../../contexts/userContext';
 
 const SiteHeader = () => {
+  const context = useContext(UserContext);
+
+  const logOut = () => {
+    context.signOut();
+    return <Redirect to="/"/>
+  };
+
   return (
     <nav className="navbar  navbar-light fixed-top  bg-dark ">
       <nav className="navbar-brand text-white">
         <Link className=" text-white" to="/">
-          TMDB Client
+          TMDB Movies
         </Link>
       </nav>
-      <FontAwesomeIcon
-        className="navbar-text text-light"
-        icon={["fas", "video"]}
-        size="3x"
-      />
+
+      <Link className="headerlinks text-white" to="/movies">
+        <FontAwesomeIcon
+          className="headerIcons navbar-text text-light"
+          icon={["fas", "video"]}
+          size="3x"
+        />
+        <p>Top Movies</p>
+      </Link>
+
+
       <span className="navbar-text text-light">
         For the movie enthusiast !!
       </span>
-      <FontAwesomeIcon
-        className="navbar-text text-light"
-        icon={["fas", "film"]}
-        size="3x"
-      />
+
+      <Link className="headerlinks text-white" to="/tickets">
+        <FontAwesomeIcon
+          className="headerIcons navbar-text text-light"
+          icon={["fas", "film"]}
+          size="3x"
+        />
+        <p>Book Tickets</p>
+      </Link>
+
       <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -38,10 +57,18 @@ const SiteHeader = () => {
               Favorites
             </Link>
           </li>
-        </ul>
-      </nav>
+          {context.user && <li className="">
+            <Link className="nav-item nav-link text-white cursor-pointer" to="/profile">
+              My profile
+            </Link>
+          </li>}
+          {context.user && <li className="nav-item nav-link text-white cursor-pointer" onClick={() => logOut()}>
+              Logout
+          </li>}
+      </ul>
     </nav>
-  );
+  </nav>
+);
 };
 
 export default SiteHeader;
