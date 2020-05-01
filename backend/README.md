@@ -34,7 +34,7 @@ To start use => npm start
 
 ## API Design
 
-|  |  GET | POST | PUT | DELETE
+| PATH | GET | POST | PUT | DELETE
 | -- | -- | -- | -- | -- 
 | /api/movies |Gets a list of movies | N/A | N/A |
 | /api/movies/{movieid} | Get a Movie | N/A | N/A | N/A
@@ -43,12 +43,11 @@ To start use => npm start
 | /api/latest-movies/ | Get all latest movies in cinemas | N/A | N/A | N/A  
 | /api/genres/ | Get all genres of movies | N/A | N/A | N/A  
 | /api/users/ | Get all users | Login/signUp a user and save details in DB| N/A | N/A  
-| /api/users/{username} | N/A| N/A| updates user's password/favourites in DB| N/A  
+| /api/users/{username} | N/A| N/A| Updates user's password/favourites in DB| N/A  
 | /api/users/{username}/favourites | Gets user's favourites from DB| Adds user's favourites in DB| N/A | N/A  
-| /api/users/{username}/favourites/{movieID} | N/A| N/A| N/A | deletes user's favourites from database
+| /api/users/{username}/favourites/{movieID} | N/A| N/A| N/A | Deletes user's favourites from database
 | /api/users/{username}/bookings | Gets user's bookings from DB| N/A| N/A | N/A  
 | /api/users/{username}/bookTickets | N/A| Add user bookings in database| N/A | N/A  
-| ... | ... | ... | ... | ...
 
 
 ## Security and Authentication
@@ -56,7 +55,7 @@ Authentication via JWT is enabled on following API's
 + /api/movies
 + /api/genres
 + /api/latest-movies
-A user must get a valid token first by using "/api/users" in order to access above services. 
+### A user must get a valid token first by using "/api/users" in order to access above services. 
 
 ## Testing
 N/A
