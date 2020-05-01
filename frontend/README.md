@@ -76,25 +76,25 @@ Additional features added
 + SignUpForm Component
 
 ## UI Design.
-+ Login Page with google sign-in
++ Login Page with google sign-in&nbsp;
 ![](2020-05-01-16-15-24.png)
 
-+ SignUp Page with google sign-up
++ SignUp Page with google sign-up&nbsp;
 ![](2020-05-01-16-15-51.png)
 
-+ Movies detail page with all crews and casts
++ Movies detail page with all crews and casts&nbsp;
 ![](2020-05-01-16-18-04.png)
 
-+ Book Tickets Page
++ Book Tickets Page&nbsp;
 ![](2020-05-01-16-18-38.png)
 
-+ FavouritesPage
++ FavouritesPage&nbsp;
 ![](2020-05-01-16-19-10.png)
 
-+ My profile page
++ My profile page&nbsp;
 ![](2020-05-01-16-19-53.png)
 
-+ Buy Tickets Page
++ Buy Tickets Page&nbsp;
 ![](2020-05-01-16-20-55.png)
 
 ## Routing.
@@ -114,3 +114,5 @@ Additional features added
 + Login/SignUp via google 
 + useForm hooks for Forms
 + 3rd party tabs component used in my profile section.
++ Live hosting on Aws ec2 instance -> http://52.18.211.206:3000/login
+(note: Google sign/signUp feature will not work on live server as google only allows named addresses in whitelist and live hosting uses free tier amazon ec2 instance that can only be accessed via IP address.)
