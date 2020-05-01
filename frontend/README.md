@@ -77,25 +77,25 @@ Additional features added
 
 ## UI Design.
 + Login Page with google sign-in&nbsp;
-![](2020-05-01-16-15-24.png)
+![](2020-05-01-16-15-24.png) </br>
 
 + SignUp Page with google sign-up&nbsp;
-![](2020-05-01-16-15-51.png)
+![](2020-05-01-16-15-51.png) </br>
 
 + Movies detail page with all crews and casts&nbsp;
-![](2020-05-01-16-18-04.png)
+![](2020-05-01-16-18-04.png) </br>
 
 + Book Tickets Page&nbsp;
-![](2020-05-01-16-18-38.png)
+![](2020-05-01-16-18-38.png) </br>
 
 + FavouritesPage&nbsp;
-![](2020-05-01-16-19-10.png)
+![](2020-05-01-16-19-10.png) </br>
 
 + My profile page&nbsp;
-![](2020-05-01-16-19-53.png)
+![](2020-05-01-16-19-53.png) </br>
 
 + Buy Tickets Page&nbsp;
-![](2020-05-01-16-20-55.png)
+![](2020-05-01-16-20-55.png) </br>
 
 ## Routing.
 + /login - Shows login Screen.
