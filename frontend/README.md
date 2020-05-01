@@ -76,8 +76,9 @@ Additional features added
 + SignUpForm Component
 
 ## UI Design.
-+ Login Page with google sign-in&nbsp;
-![](2020-05-01-16-15-24.png) </br>
++ Login Page with google sign-in
+![](2020-05-01-16-15-24.png)
+>
 
 + SignUp Page with google sign-up&nbsp;
 ![](2020-05-01-16-15-51.png) </br>
