@@ -76,22 +76,41 @@ Additional features added
 + SignUpForm Component
 
 ## UI Design.
++ Login Page with google sign-in
+![](2020-05-01-16-15-24.png)
 
++ SignUp Page with google sign-up
+![](2020-05-01-16-15-51.png)
 
++ Movies detail page with all crews and casts
+![](2020-05-01-16-18-04.png)
+
++ Book Tickets Page
+![](2020-05-01-16-18-38.png)
+
++ FavouritesPage
+![](2020-05-01-16-19-10.png)
+
++ My profile page
+![](2020-05-01-16-19-53.png)
+
++ Buy Tickets Page
+![](2020-05-01-16-20-55.png)
 
 ## Routing.
-. . . . List each route supported by your app and state the associated view. For expansion of the Movies Fan app, only new routes should be listed. Hi-light any advanced routing cases, e.g. nested routes. If relevant, specify which of the routes require authentication. . . . . . 
-
-+ /foos - displays all published foos.
-+ /foos/:id - detail view of a particular foo (:id).
-+ etc.
-+ etc.
++ /login - Shows login Screen.
++ /signup - Shows signUp screen.
++ /movies -> Homepage lists top movies of all time.
++ /movies/:movieID -> show specific movie details.
++ /tickets -> shows list of latest movies in cinemas.
++ buyTickets/:movieID -> form to buy tickets to specifc movie.
++ /movies/favorites -> shows list of all favourite movies.
++ /profile-> Shows user profile page with a bookings tab
++ reviews/form -> shows form to submit reviews.
++ reviews/:movieID -> shows movie reviews along with reviews added by user.
 
 ## Independent learning.
 
-. . . . . State the aspects of your app codebase that required independent learning/research on your behalf. Mention the technology/technique used and include source references. (See the assignment specification for examples.) 
-
-
-[model]: ./data.jpg
-[view]: ./view.png
-[stories]: ./storybook.png
++ Login/SignUp via google 
++ useForm hooks for Forms
++ 3rd party tabs component used in my profile section.
