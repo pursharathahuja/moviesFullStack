@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import {UserContext} from "./contexts/userContext";
+import {AuthContext} from "./contexts/authContext";
 
 export function excerpt(string) {
   const truncate = _.truncate;
@@ -12,7 +12,7 @@ export function excerpt(string) {
 }
 
 export const PrivateRoute = props => {
-  const context = useContext(UserContext);
+  const context = useContext(AuthContext);
   const { component: Component, ...rest } = props;
   return context.user ? (
     <Route {...rest} render={props => <Component {...props} />} />

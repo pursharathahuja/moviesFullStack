@@ -14,42 +14,37 @@ const LoginForm = ({action, redirect}) => {
   };
 
   return (
-    <div>
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
-      <h3>Login</h3>
-      <div className="form-group">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Username"
-          name="username"
-          ref={register({ required: "Username required" })}
-        />
-      </div>
-      {errors.username && <p className=" text-white">{errors.username.message} </p>}
-      <div className="form-group">
-        <input
+    <form className="modal-content animate" onSubmit={handleSubmit(onSubmit)}>
+    <div className="imgcontainer">
+      <img src={"./fallback.png"} alt="Avatar" class="avatar"/>
+    </div>
+
+    <div className="container loginSignUp">
+      <label for="username"><b>Username</b></label>
+      <input type="text"          
+        autoComplete="off"
+        placeholder="Username"
+        name="username"
+        ref={register({ required: "Username is a required field" })}
+      />
+      {errors.username && <p className="text-red">{errors.username.message} </p>}
+      
+      <label for="password"><b>Password</b></label>
+      <input
+          autoComplete="off"
           type="password"
-          className="form-control"
           placeholder="Password"
           name="password"
-          ref={register({ required: "Password required" })}
-        />
+          ref={register({ required: "Password is a required field" })}
+        />  
+      {errors.password && <p className="text-red">{errors.password.message} </p>}      
+      <button type="submit">Login</button>
+      <div class="container">
+        <span class="psw"> <Link to={{pathname: "/signup", state: {from: redirect}}}>
+          Not registered yet? </Link></span>
       </div>
-      {errors.password && <p className="text-white">{errors.password.message} </p>}
-
-     <div className='row'>
-        <button type="submit" className="btn btn-primary mx-4">
-            Login
-        </button>
-        <Link to={{pathname: "/register", state: {from: redirect}}}>
-            <button className="btn btn-primary">
-                Register
-            </button>
-        </Link>
-     </div>
-    </form>
     </div>
+  </form>
   );
 };
 

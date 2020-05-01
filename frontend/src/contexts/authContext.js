@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {loginUser, registerUser} from '../api/tmdb-api';
+import {loginUser, signUp} from '../api/tmdb-api';
 
-export const UserContext = React.createContext(null)
+export const AuthContext = React.createContext(null)
 
-const UserContextProvider = props => {
+const AuthContextProvider = props => {
   const existingToken = localStorage.getItem("token");
   const existingUser = localStorage.getItem("user");
   const [authToken, setAuthToken] = useState(existingToken);
@@ -34,7 +34,7 @@ const UserContextProvider = props => {
     if (newUser.password !== newUser.confirmPassword) {
       return cb(false, "Please make sure the passwords match!");
     }
-    registerUser(newUser).then(result => {
+    signUp(newUser).then(result => {
       if (result.code && result.code === 201) {
         authenticate(newUser, success => {
           if (success) cb && cb (success, "New user created and authenticated");
@@ -53,7 +53,7 @@ const UserContextProvider = props => {
   }
 
   return (
-    <UserContext.Provider
+    <AuthContext.Provider
       value={{
         user: user,
         authToken: authToken,
@@ -63,8 +63,8 @@ const UserContextProvider = props => {
       }}
     >
       {props.children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
-export default UserContextProvider
+export default AuthContextProvider

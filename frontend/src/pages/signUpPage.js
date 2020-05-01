@@ -1,18 +1,18 @@
 import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
-import {UserContext} from '../contexts/userContext';
+import {AuthContext} from '../contexts/authContext';
 import {MoviesContext} from '../contexts/moviesContext';
-import RegisterForm from "../components/registerForm";
+import SignUpForm from "../components/signUpForm";
 import GoogleLogin from 'react-google-login';
 
 
-const RegisterPage = (props) => {
+const SignUpPage = (props) => {
   const [error, setError] = useState("");
   const [registered, setRegistered] = useState(false);
-  const context = useContext(UserContext);
+  const context = useContext(AuthContext);
   const moviesContext = useContext(MoviesContext);
 
-  const register = (data) => {
+  const signup = (data) => {
     console.log(data);
     context.register(data, (status, err) => {
         if (!status && err) {
@@ -27,7 +27,7 @@ const RegisterPage = (props) => {
 
   const responseGoogle = (response) => {
     console.log(response);
-    register({"username":response.profileObj.email,"password":"null","confirmPassword":"null"});
+    signup({"username":response.profileObj.email,"password":"null","confirmPassword":"null"});
   }
 
   const { from } = props.location.state || { from: { pathname: "/" } };
@@ -39,22 +39,24 @@ const RegisterPage = (props) => {
     <div className="row">
       <div className="card col-md-6 mx-auto my-5">
         <div className="card-body">
-          <RegisterForm action={register}/>
+          <SignUpForm action={signup}/>
           <p className="text-danger">{error}</p>
         </div>
         <div style={{textAlign:"center",paddingBottom: "13px"}}><div>OR</div>
-          <GoogleLogin
-              clientId="241314629573-0vrt4oack9eqphtc1q9gt61fl9mtlqiv.apps.googleusercontent.com"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={'single_host_origin'}
-          >
-          <span> Sign up with Google</span>
-          </GoogleLogin>
+          <div className="customGoogleButton">
+            <GoogleLogin
+                clientId="241314629573-0vrt4oack9eqphtc1q9gt61fl9mtlqiv.apps.googleusercontent.com"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            >
+            <span> Sign up with Google</span>
+            </GoogleLogin>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default RegisterPage;
+export default SignUpPage;

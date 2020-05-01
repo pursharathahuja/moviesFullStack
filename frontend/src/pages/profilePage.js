@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import {UserContext} from '../contexts/userContext';
+import {AuthContext} from '../contexts/authContext';
 import {MoviesContext} from '../contexts/moviesContext';
 import {Tabs, Tab} from 'react-bootstrap-tabs';
 import useForm from "react-hook-form";
@@ -10,7 +10,7 @@ import {updateUser, getUserBookings} from '../api/tmdb-api';
 
 const ProfilePage = (props) => {
   const [bookings, setBookings] = useState("");
-  const context = useContext(UserContext);
+  const context = useContext(AuthContext);
   const moviesContext = useContext(MoviesContext);
   const { register, handleSubmit, errors, reset } = useForm();
   const [disable, setDisable] = useState('');

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
-import {UserContext} from '../contexts/userContext';
+import {AuthContext} from '../contexts/authContext';
 import {MoviesContext} from '../contexts/moviesContext';
 import LoginForm from "../components/loginForm";
 import GoogleLogin from 'react-google-login';
@@ -9,7 +9,7 @@ import GoogleLogin from 'react-google-login';
 const LoginPage = props => {
   const [error, setError] = useState("");
   const [loggedInStatus, setLoggedInStatus] = useState(false);
-  const context = useContext(UserContext);
+  const context = useContext(AuthContext);
   const moviesContext = useContext(MoviesContext);
 
   const login = (data) => {
@@ -41,14 +41,16 @@ const LoginPage = props => {
           <p className="text-danger">{error}</p>
         </div>
         <div style={{textAlign:"center",paddingBottom: "13px"}}><div>OR</div>
-        <GoogleLogin
-            clientId="241314629573-0vrt4oack9eqphtc1q9gt61fl9mtlqiv.apps.googleusercontent.com"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-        >
-        <span> Sign in with Google</span>
-        </GoogleLogin>
+        <div className="customGoogleButton">
+          <GoogleLogin
+              clientId="241314629573-0vrt4oack9eqphtc1q9gt61fl9mtlqiv.apps.googleusercontent.com"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+          >
+          <span> Sign in with Google</span>
+          </GoogleLogin>
+        </div>
         </div>
       </div>
     </div>

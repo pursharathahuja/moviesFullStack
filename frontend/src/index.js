@@ -12,9 +12,9 @@ import ProfilePage from './pages/profilePage'
 import MovieReviewPage from './pages/movieReviewPage'
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import LoginPage from './pages/loginPage';
-import RegisterPage from './pages/registerPage';
+import SignUpPage from './pages/signUpPage';
 import SiteHeader from './components/siteHeader'
-import UserContextProvider from "./contexts/userContext"
+import AuthContextProvider from "./contexts/authContext"
 import MoviesContextProvider from "./contexts/moviesContext"
 import TicketsContextProvider from "./contexts/ticketsContext"
 import GenresContextProvider from "./contexts/genresContext"
@@ -24,14 +24,14 @@ const App = () => {
     <BrowserRouter>
     <div className="jumbotron">
       <div className="container-fluid">
-        <UserContextProvider>
+        <AuthContextProvider>
           <SiteHeader/>
           <MoviesContextProvider>
             <TicketsContextProvider>
             <GenresContextProvider>
               <Switch>
                 <Route path='/login' component={ LoginPage } />
-                <Route path='/register' component={ RegisterPage } />
+                <Route path='/signup' component={ SignUpPage } />
                 <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
                 <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <PrivateRoute exact path="/tickets" component={TicketsPage} />
@@ -45,7 +45,7 @@ const App = () => {
             </GenresContextProvider>
             </TicketsContextProvider>
           </MoviesContextProvider>
-        </UserContextProvider>
+        </AuthContextProvider>
       </div>
     </div>
   </BrowserRouter>

@@ -4,10 +4,10 @@ import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
 import "./siteHeader.css";
-import {UserContext} from '../../contexts/userContext';
+import {AuthContext} from '../../contexts/authContext';
 
 const SiteHeader = () => {
-  const context = useContext(UserContext);
+  const context = useContext(AuthContext);
 
   const logOut = () => {
     context.signOut();

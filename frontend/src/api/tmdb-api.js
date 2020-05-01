@@ -112,7 +112,7 @@ export const getLatestMovies = async () => {
     return await res.json();
   }
 
-  export const registerUser = async user => {
+  export const signUp = async user => {
     const res = await fetch(`/api/users?action=register`, {
       method: 'POST',
       headers: {
