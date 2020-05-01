@@ -2,7 +2,6 @@ import express from 'express';
 import {
   getMovies, getMovie, getMovieReviews, getMovieCredits
 } from '../tmdb-api';
-import wrap from 'express-async-wrapper';
 import Movie from './movieModel';
 
 const router = express.Router();

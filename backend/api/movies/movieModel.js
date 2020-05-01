@@ -28,12 +28,12 @@ const MovieSchema = new Schema({
         name : { type: String}
       } ],
       runtime : {type:Number},
-spoken_languages : [ {
-  iso_639_1 : { type: String},
-  name : { type: String}
-} ],
-status : { type: String},
-tagline : { type: String}
+    spoken_languages : [ {
+      iso_639_1 : { type: String},
+      name : { type: String}
+    } ],
+    status : { type: String},
+    tagline : { type: String}
 
   });
 

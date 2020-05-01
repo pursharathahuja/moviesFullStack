@@ -4,7 +4,7 @@ import moviesRouter from './api/movies';
 import genresRouter from './api/genres';
 import latestMoviesRouter from './api/latestMovies';
 import bodyParser from 'body-parser';
-import './db';
+import './database';
 import usersRouter from './api/users';
 import session from 'express-session';
 import passport from './authenticate';
