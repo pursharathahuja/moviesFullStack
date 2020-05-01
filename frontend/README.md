@@ -76,27 +76,33 @@ Additional features added
 + SignUpForm Component
 
 ## UI Design.
-+ Login Page with google sign-in
++ Login Page with google sign-in.
 ![](2020-05-01-16-15-24.png)
 >
 
-+ SignUp Page with google sign-up&nbsp;
-![](2020-05-01-16-15-51.png) </br>
++ SignUp Page with google sign-up.
+![](2020-05-01-16-15-51.png)
+>
 
-+ Movies detail page with all crews and casts&nbsp;
-![](2020-05-01-16-18-04.png) </br>
++ Movies detail page with all crews and casts.
+![](2020-05-01-16-18-04.png)
+>
 
-+ Book Tickets Page&nbsp;
-![](2020-05-01-16-18-38.png) </br>
++ Book Tickets Page
+![](2020-05-01-16-18-38.png)
+>
 
-+ FavouritesPage&nbsp;
-![](2020-05-01-16-19-10.png) </br>
++ FavouritesPage
+![](2020-05-01-16-19-10.png)
+>
 
 + My profile page&nbsp;
-![](2020-05-01-16-19-53.png) </br>
+![](2020-05-01-16-19-53.png)
+>
 
-+ Buy Tickets Page&nbsp;
-![](2020-05-01-16-20-55.png) </br>
++ Buy Tickets Page
+![](2020-05-01-16-20-55.png)
+>
 
 ## Routing.
 + /login - Shows login Screen.
