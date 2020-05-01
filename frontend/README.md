@@ -77,7 +77,7 @@ Additional features added
 
 ## UI Design.
 + Login Page with google sign-in.
-![](2020-05-01-16-15-24.png)
+![](2020-05-01-16-15-24.png | width=100)
 >
 
 + SignUp Page with google sign-up.
