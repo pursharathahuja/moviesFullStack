@@ -6,7 +6,7 @@ import {
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  getLatestMovies().then(genres => res.status(200).send(genres));
+  getLatestMovies().then(movies => res.status(200).send(movies));
 });
 
 export default router;
